@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -16,30 +16,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PHr-m2-Rlk" userLabel="RedSquare">
-                                <rect key="frame" x="117" y="52" width="180" height="180"/>
-                                <color key="backgroundColor" red="0.91980725526809692" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="180" id="LFs-vL-bPU"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="180" id="h8i-jb-uVc"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4xN-UL-vcx" userLabel="YellowSquare">
-                                <rect key="frame" x="117" y="253" width="180" height="180"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="180" id="WVV-ax-gPm"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="180" id="msT-P5-2Aw"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="INI-gI-QPB" userLabel="GreenSquare">
-                                <rect key="frame" x="117" y="460" width="180" height="180"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="180" id="ZMc-o0-lQw"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="180" id="c5L-Hu-6X5"/>
-                                </constraints>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="uWf-Nt-O50">
+                                <rect key="frame" x="132" y="102" width="150" height="516"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PHr-m2-Rlk" userLabel="RedSquare">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <color key="backgroundColor" red="0.91980725526809692" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="PHr-m2-Rlk" secondAttribute="height" multiplier="1:1" id="2fr-Dz-LfQ"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="150" id="foZ-CR-TCR"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4xN-UL-vcx" userLabel="YellowSquare">
+                                        <rect key="frame" x="0.0" y="183" width="150" height="150"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="150" id="YAW-T8-9KV"/>
+                                            <constraint firstAttribute="width" secondItem="4xN-UL-vcx" secondAttribute="height" multiplier="1:1" id="tmC-g4-UfQ"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="INI-gI-QPB" userLabel="GreenSquare">
+                                        <rect key="frame" x="0.0" y="366" width="150" height="150"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="INI-gI-QPB" secondAttribute="height" multiplier="1:1" id="HQz-On-F83"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="150" id="N5W-yE-vwn"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFt-FS-C1o" userLabel="ButtonStart">
                                 <rect key="frame" x="122.5" y="788" width="169.5" height="74"/>
                                 <state key="normal" title="Button"/>
@@ -55,14 +60,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                         <constraints>
-                            <constraint firstItem="PHr-m2-Rlk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CFv-Bt-VFv"/>
-                            <constraint firstItem="4xN-UL-vcx" firstAttribute="top" secondItem="PHr-m2-Rlk" secondAttribute="bottom" constant="21" id="J0H-ZZ-fLe"/>
-                            <constraint firstItem="DFt-FS-C1o" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Lr3-e7-kj4"/>
-                            <constraint firstItem="4xN-UL-vcx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Vae-i6-fqn"/>
-                            <constraint firstItem="INI-gI-QPB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bmo-Pg-X3u"/>
-                            <constraint firstItem="INI-gI-QPB" firstAttribute="top" secondItem="4xN-UL-vcx" secondAttribute="bottom" constant="27" id="oq6-Nc-iFC"/>
-                            <constraint firstItem="PHr-m2-Rlk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="rT5-Z4-a7W"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DFt-FS-C1o" secondAttribute="bottom" id="zGs-z2-PWq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DFt-FS-C1o" secondAttribute="bottom" id="B9l-uB-Hf6"/>
+                            <constraint firstItem="uWf-Nt-O50" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="58" id="S7E-Ll-zpy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uWf-Nt-O50" secondAttribute="trailing" constant="132" id="bJW-K4-Ptb"/>
+                            <constraint firstItem="uWf-Nt-O50" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="nED-VA-w37"/>
+                            <constraint firstItem="DFt-FS-C1o" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="u7U-4h-hQB"/>
                         </constraints>
                     </view>
                 </viewController>
